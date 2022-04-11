@@ -1,0 +1,213 @@
+---
+title: "Analysis of Teachers' Recruitment in Saudi Arabia Between 1437 and 1440"
+subtitle: "Data from Saudi Open Data Office"
+author: "Musab Isah"
+date: "`r Sys.Date()`"
+output: github_document
+---
+
+Group Number:
+
+Members' Names (IDs):
+
+1. Abc Xyz (00000000)   -- Member 1 - Team Leader
+2.                      -- Member 2
+3.                      -- Member 3
+4.                      -- Member 4
+5.                      -- Member 5
+
+
+The below lines of code tells RMD to include the code in the content when the document is knitted.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Installing and loading the libraries `tidyverse`, `readxl`, and `ggpubr`. The following code will first install the libraries if not already installed and then load them.
+
+```{r libraries, echo=FALSE, message = FALSE}
+Sys.setlocale("LC_CTYPE", "arabic" )
+if(!require(tidyverse)){
+  install.packages("tidyverse")
+  library(tidyverse)}
+if(!require(readxl)){
+  install.packages("readxl")
+  library(readxl)}
+if(!require(ggpubr)){
+  install.packages("ggpubr")
+  library("ggpubr")}
+```
+
+
+We then need to load the data from the MS Excel (.xlsx) file, named teachers_data.xlsx, to the R environment for processing.
+
+*Note: Only Team Leader should run the code below*
+
+```{r load_data, message = FALSE}
+tdata <- read_excel("data/teachers_data.xlsx")
+```
+
+Familiarize yourself with the data by looking at the number or rows and number of columns. But more importantly look at the variables/column names using the following command.
+
+```{r inspect_data}
+colnames(tdata)
+```
+
+# Wherever you see the text '#Add some code', it means you should delete the comment and add your code for the task.
+
+## 2 Marks will be deducted for every deadline missed
+
+
+# Task 1 - DEADLINE: 16 April 2022
+*[8 points]*
+
+*Team Leader*
+
+As we could see, the column names are in Arabic and will be difficult to deal with, so we need to tidy-up the data a bit by changing the column names to English. Add the code to make this change below.
+
+```{r tidy_data}
+#Add some code
+```
+
+*Team Leader should knit, commit, and push changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
+
+# Task2 - DEADLINE: 23 April 2022
+*[8 points]*
+
+*Team Member 2: Pull the changes before proceeding*
+
+(a) What are the different administrative_regions found in the data?
+*(4 points)*
+
+```{r admin_regions}
+#Add some code
+```
+
+Comment about your answer:
+
+(b) Based on your knowledge of the administrative_regions in Saudi Arabia, is there any region that has not recruited any teacher during the period under review (1437 - 1440 Hijri)? List the Saudi regions shown in the data to see if all of them are listed.
+*(4 points)*
+
+```{r not_recruited_admin_regions}
+#Add some code
+```
+
+Comment about your answer:
+
+*Team Member 2 should knit, commit, and push changes to GitHub with an appropriate commit message.*
+
+# Task3 - DEADLINE: 12 May 2022
+*[20 points]*
+
+*Team Member 3. Pull the changes before proceeding.*
+
+(a) Saudi Arabian education is divided into different stages/levels, list the different levels showed in the data in descending order of frequency. 
+*(3 points)*
+
+```{r study_levels}
+#Add some code
+```
+
+Comment about your answer:
+
+(b) Which level recruit the most teachers? 
+*(2 points)*
+
+Comment about your answer (answer in (a) above):
+
+*Team Member 3 should Knit, commit, and push changes to GitHub with an appropriate commit message.*
+
+*Team Member 4. Pull the changes before proceeding.*
+
+(c) Plot a scatter graph of region versus number of **Saudi** teachers recruited over the period. 
+*(5 points)*
+
+```{r plot_admin_regions_saudi}
+#Add some code
+```
+
+Comment about your answer:
+
+
+(d) Plot a scatter graph of region versus number of **Non-Saudi** teachers recruited over the period. 
+*(5 points)*
+
+
+```{r plot_admin_regions_non-saudi}
+#Add some code
+```
+
+Comment about your answer:
+
+*Team Member 4 should Knit, commit, and push changes to GitHub with an appropriate commit message.*
+
+*Team Member 5. Pull the changes before proceeding.*
+
+(e) Plot the graph of region versus number of **all teachers** recruited over the period.
+*(5 points)*
+
+```{r plot_admin_regions_all}
+#Add some code
+```
+
+## Task 4 - DEADLINE: 15 May 2022
+*(12 points)*
+
+
+(a) How many teachers are recruited in boys' and girls' schools? 
+*(3 points)*
+
+```{r no_boys_girls}
+#Add some code
+```
+
+Comment about your answer:
+
+*Team Member 5 should Knit, commit, and push changes to GitHub with an appropriate commit message.*
+
+*Team Leader. Pull the changes before proceeding.*
+
+(b) Between boys and girls schools, which recruit more teachers? 
+*(1 point)*
+
+Comment about your answer (answer in (a) above): 
+
+(c) What is the correlation between recruitment at boys schools and recruitment of girls schools? *(8 points)*
+
+```{r plot_correlation_boys_girls}
+#Add some code
+```
+
+Comment about your answer:
+
+*Team Leader should Knit, commit, and push changes to GitHub with an appropriate commit message.*
+
+## Task 5 - DEADLINE: 19 May 2022
+*[12 points]*
+
+*Team Member 2 or Team Member 3. Pull the changes made previously before proceeding.*
+
+(a) How many teachers are recruited each year, 1437, 1438, 1439, and 1440?
+*(8 points)*
+
+```{r teachers_per_year}
+#Add some code
+```
+
+Comments about your answer:
+
+*Team Member 2 or Team Member 3 should Knit, commit, and push changes to GitHub with an appropriate commit message.*
+
+*Team Member 4 or Team Member 5. Pull the changes before proceeding.*
+
+(b) Which region recruited the most teachers in each of the years under review? *(8 points)*
+
+```{r teachers_per_region}
+#Add some code
+```
+
+Comments about your answer:
+
+The Team Member should *Knit, commit, and push changes to GitHub with an appropriate commit message.*
+
+
+## If you are here, then congratulations!! You have completed the DSC 200 course project.
